@@ -1,12 +1,29 @@
 ---
 import { Image } from "astro:assets";
 
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+library.add(faXTwitter, faYoutube);
+const twitterIcon = icon({ prefix: "fab", iconName: faXTwitter.iconName });
+const youtubeIcon = icon({ prefix: "fab", iconName: faYoutube.iconName });
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 
 import authorPhoto from "../images/IMG_1859.jpg";
 ---
+
+<style is:global>
+  /* Declare a custom CSS class to make the icon look right */
+  .svg-inline--fa {
+    display: inline-block;
+    vertical-align: -0.125em;
+    box-sizing: content-box;
+    height: 1em;
+    overflow: visible;
+  }
+</style>
 
 <BaseLayout
   title="The Book Of Satoshi"
@@ -110,14 +127,25 @@ import authorPhoto from "../images/IMG_1859.jpg";
   <section class="grid justify-center p-4">
     <div class="max-w-3xl space-y-4 text-justify leading-7">
       <h2 class="text-center text-3xl">About the Author</h2>
-      <Image
-        class="m-auto max-w-52 pb-4 sm:float-right sm:max-w-64 sm:pl-4"
-        src={authorPhoto}
-        alt="A photo of the author, Phil Champagne"
-        layout="constrained"
-        width={300}
-        height={300}
-      />
+      <div
+        class="m-auto max-w-52 pb-4 sm:float-right sm:max-w-64 sm:pt-2 sm:pl-4"
+      >
+        <Image
+          src={authorPhoto}
+          alt="A photo of the author, Phil Champagne"
+          layout="full-width"
+          width={300}
+          height={300}
+        />
+        <p class="space-x-4.5 pt-4 text-center text-3xl">
+          <a href="https://x.com/egg_descrambler"
+            ><Fragment set:html={twitterIcon.html} /></a
+          >
+          <a href="https://www.youtube.com/@PhilChampagne"
+            ><Fragment set:html={youtubeIcon.html} /></a
+          >
+        </p>
+      </div>
       <p>
         Phil Champagne is the author of the best selling books, "The Book of
         Satoshi: The Collected Writings of Bitcoin Creator Satoshi Nakamoto"
