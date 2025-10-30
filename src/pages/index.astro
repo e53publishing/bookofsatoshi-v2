@@ -1,15 +1,146 @@
 ---
+import { Image } from "astro:assets";
 
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+
+import authorPhoto from "../images/IMG_1859.jpg";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout
+  title="The Book Of Satoshi"
+  description="The Collected Writings of Bitcoin Creator Satoshi Nakamoto"
+>
+  <NavBar />
+  <section class="pb-4">
+    <h1 class="font-brand text-center">
+      <div
+        class="bg-[url('/hero-img.webp')] bg-cover bg-position-[center_60%] pt-32 text-4xl tracking-wide text-white sm:pt-48 sm:text-7xl sm:tracking-wider"
+      >
+        The Book Of
+      </div>
+      <div
+        class="text-brand text-6xl tracking-wider sm:text-9xl sm:tracking-wide"
+      >
+        Satoshi
+      </div>
+    </h1>
+    <p class="px-4 text-center sm:text-xl">
+      The Collected Writings of Bitcoin Creator Satoshi Nakamoto
+    </p>
+  </section>
+  <section class="grid justify-center px-4 py-8">
+    <div class="grid gap-4 text-center text-white sm:grid-cols-3">
+      <a
+        class="bg-brand block rounded-lg px-4 py-2"
+        href="https://www.amazon.com/Book-Satoshi-Collected-Writings-Nakamoto-ebook/dp/B0F4FWTZ7R"
+        >Buy on Kindle</a
+      >
+      <a
+        class="bg-brand block rounded-lg px-4 py-2"
+        href="https://www.amazon.com/Book-Satoshi-Collected-Writings-Nakamoto/dp/0996061371"
+        >Buy the Paperback</a
+      >
+      <a
+        class="bg-brand block rounded-lg px-4 py-2"
+        href="https://www.amazon.com/Book-Satoshi-Collected-Writings-Nakamoto/dp/0996061363"
+        >Buy the Hardcover</a
+      >
+    </div>
+  </section>
+  <section class="grid justify-center p-4">
+    <div class="max-w-3xl space-y-4 text-justify leading-7">
+      <p>
+        Have you, like the rest of the world, speculated as to the identity of
+        Satoshi Nakamoto, anonymous creator of Bitcoin?
+      </p>
+      <p>
+        The world's first cryptocurrency, Bitcoin went online in 2009 and has
+        since revolutionized our concepts of currency and money. Not supported
+        by any government or central bank, completely electronic, Bitcoin is a
+        virtual currency based on advanced cryptographic systems.
+      </p>
+      <p>
+        Like the currency he created, the identity of Bitcoin's creator Satoshi
+        Nakamoto is virtual, existing only online. The Nakamoto persona, which
+        may represent an individual or a group, exists only in the online
+        publications that introduced and explained Bitcoin during its earliest
+        days. Here, collected and professionally published for the first time
+        are the essential writings that detail Bitcoin's creation.
+      </p>
+      <p class="font-semibold">Included are:</p>
+      <ul class="list-outside list-disc pl-6">
+        <li>
+          Satoshi Nakamoto Emails and Posts on Computer Forums Presented in
+          Chronological Order
+        </li>
+        <li>Bitcoin Fundamentals Presented in Layman's Terms</li>
+        <li>Bitcoin's Potential and Profound Economic Implications</li>
+        <li>The Seminal Paper Which Started It All</li>
+      </ul>
+      <p>
+        The Book of Satoshi provides a convenient way to parse through what
+        Bitcoin's creator wrote over the span of the two years that constituted
+        his "public life" before he disappeared from the Internet ... at least
+        under the name Satoshi Nakamoto. Beginning on November 1st 2009 with the
+        publication of the seminal paper describing Bitcoin, this public life
+        ends at about the time PC World speculated as to a possible link between
+        Bitcoin and WikiLeaks, the infamous website that publishes leaked
+        classified materials. Was there a connection? You be the judge.
+      </p>
+      <p>
+        Nakamoto's true identity may never be known. Therefore the writings
+        reproduced here are probably all the world will ever hear from him
+        concerning Bitcoin's creation, workings, and theoretical basis. Want to
+        learn more about Bitcoin? Go directly to the source-the writings of the
+        creator himself, Satoshi Nakamoto!
+      </p>
+      <p class="font-semibold">What's new in the 2nd edition:</p>
+      <ul class="list-outside list-disc pl-6">
+        <li>A few posts that were missing</li>
+        <li>
+          Several new emails exchanged with Satoshi that have been openly
+          published and revealed after the first edition.
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="grid justify-center p-4">
+    <div class="max-w-3xl space-y-4 text-justify leading-7">
+      <h2 class="text-center text-3xl">About the Author</h2>
+      <Image
+        class="m-auto max-w-52 pb-4 sm:float-right sm:max-w-64 sm:pl-4"
+        src={authorPhoto}
+        alt="A photo of the author, Phil Champagne"
+        layout="constrained"
+        width={300}
+        height={300}
+      />
+      <p>
+        Phil Champagne is the author of the best selling books, "The Book of
+        Satoshi: The Collected Writings of Bitcoin Creator Satoshi Nakamoto"
+        (1st edition published in 2014 and 2nd edition in 2025) and "Bitcoin vs
+        Altcoins: The Battle for Dominance" (2023).
+      </p>
+      <p>
+        The Book of Satoshi (1st edition) was the first English language book
+        ever published about Bitcoin back in 2014. Since then The Book of
+        Satoshi became a history book about Bitcoin translated into 7 languages
+        and counting, and consistently referred to as one of the top 5 must read
+        books on Bitcoin. Following Craig's Wright trial, new emails were
+        released. This prompted Phil to write the 2nd edition and give us the
+        most complete collection of Satoshi's writings up to date.
+      </p>
+      <p>
+        Phil has a background in software engineering with a bachelor's degree
+        in electrical engineering (University of Sherbrooke, Québec, Canada).
+        He's also a seasoned real estate and precious metals investor with 20+
+        years experience and is the managing director of Wren Investment Group.
+        Guided by the Austrian School of Economics, he's been a strong advocate
+        of Bitcoin since 2012.
+      </p>
+    </div>
+  </section>
+  <Footer />
+</BaseLayout>
